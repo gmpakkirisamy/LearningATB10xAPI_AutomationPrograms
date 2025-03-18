@@ -10,14 +10,20 @@ public class Lab_001_API_Testing {
         //Then() -> Validation -> 200 ok, firstname == SAMY
 
         //Full URL - https://api.zippopotam.us/IN/560016
-        //Base URL - https://api.zippopotam.us
+        //Base URI  - https://api.zippopotam.us
         //Base Path -/IN/560016
 
         RestAssured.
                 given()
-                .baseUri("https://api.zippopotam.us")
-                .basePath("/IN/560016").when()
-                .get()
-                .then().log().all().statusCode(200);
+                .useRelaxedHTTPSValidation()
+                .when()
+                .get("http://abcd.com/resource");
+
+//                RestAssured.
+//                given()
+//                .baseUri("https://api.zippopotam.us")
+//                .basePath("/IN/560016").when()
+//                .get()
+//                .then().log().all().statusCode(200);
     }
 }
