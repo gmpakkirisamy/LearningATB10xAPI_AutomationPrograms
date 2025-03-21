@@ -7,7 +7,7 @@ import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.Test;
 
-public class ex_007_GET_NonBDDSytle {
+public class Lab_007_GET_NonBDDSytle {
 
     //There are three parts in the non bdd framework
 

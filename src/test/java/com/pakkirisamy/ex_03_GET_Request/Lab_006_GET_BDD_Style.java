@@ -4,7 +4,7 @@ import io.restassured.RestAssured;
 import io.restassured.config.SSLConfig;
 import org.testng.annotations.Test;
 
-public class ex_006_GET_BDD_Style {
+public class Lab_006_GET_BDD_Style {
     @Test
 
     public void test_BDD_GET(){

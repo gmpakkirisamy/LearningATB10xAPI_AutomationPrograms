@@ -2,7 +2,7 @@
 <suite name="Suite">
     <test name="Test">
         <classes>
-            <class name="com.pakkirisamy.ex_04_POST_Request.ex_008_POST_Request"/>
+            <class name="com.pakkirisamy.ex_04_POST_Request.Lab_008_POST_Request"/>
         </classes>
     </test>
 </suite>

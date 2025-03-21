@@ -9,7 +9,7 @@ import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.Test;
 
-public class ex_008_POST_Request {
+public class Lab_008_POST_Request {
 
 
 

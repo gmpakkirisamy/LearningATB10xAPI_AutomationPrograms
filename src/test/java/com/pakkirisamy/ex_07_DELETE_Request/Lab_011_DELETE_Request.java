@@ -1,4 +1,4 @@
-package com.pakkirisamy.ex_06_PATCH_Request;
+package com.pakkirisamy.ex_07_DELETE_Request;
 
 import io.qameta.allure.Description;
 import io.restassured.RestAssured;
@@ -8,21 +8,13 @@ import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.Test;
 
-public class ex_010_PATCH_Request {
-    //PATCH
-    //token, booking id
-    //Comparing to PUT, PATCH will be payload will be less and method will change as patch
-    //public void get_token(){}
-    //public void get_booking_id(){}
-    @Test
-    @Description("Verify the PUT Request for the Restful Booker APIs")
-    public void test_put_non_bdd() {
-        String token = "934c38cf33eb890";
-        String bookingid = "3";
+public class Lab_011_DELETE_Request {
 
-        String payload = "{\n" +
-                "    \"firstname\": \"Karthy\",\n" +
-                "    \"lastname\": \"Samy\"}";
+    @Test
+    @Description ("Delete Request")
+    public void test_delete_non_bdd() {
+        String token = "74ea81eda165232";
+        String bookingid = "3";
 
         RequestSpecification requestSpecification = RestAssured.given();
         requestSpecification.baseUri("https://restful-booker.herokuapp.com/");
@@ -30,12 +22,11 @@ public class ex_010_PATCH_Request {
         requestSpecification.contentType(ContentType.JSON);
         //requestSpecification.auth().basic("admin","password123"); // Username password also can be used. But use only use one.
         requestSpecification.cookie("token",token);
-        requestSpecification.body(payload).log().all();
 
-        Response response = requestSpecification.when().patch();
+
+        Response response = requestSpecification.when().delete();
 
         ValidatableResponse validatableResponse = response.then().log().all();
-        validatableResponse.statusCode(200);
-
+        validatableResponse.statusCode(201);
     }
 }
