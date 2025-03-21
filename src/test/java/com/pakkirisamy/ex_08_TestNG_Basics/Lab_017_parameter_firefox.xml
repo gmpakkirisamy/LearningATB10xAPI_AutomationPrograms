@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite">
+    <test name="Test">
+  <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="com.pakkirisamy.ex_08_TestNG_Basics.Lab_017_TestNG_Parameter"/>
+        </classes>
+    </test>
+</suite>
