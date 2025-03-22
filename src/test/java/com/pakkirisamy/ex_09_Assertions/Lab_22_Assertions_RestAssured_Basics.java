@@ -18,6 +18,7 @@ public class Lab_22_Assertions_RestAssured_Basics {
     Response response;
     String token;
     Integer bookingId;
+    //
 
     @Test
 
