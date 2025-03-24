@@ -55,7 +55,6 @@ public class Lab_24_Assertions_AssertJ_Basics {
         String lastname = response.then().extract().path("booking.lastname");
 
         //AssertJ (3rd Lib to Assertions)
-
         assertThat(bookingId).isNotNull().isNotZero().isPositive();
         assertThat(firstname).isEqualTo("Faye").isNotEmpty().isNotBlank().isNotNull();
 
