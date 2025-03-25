@@ -1,6 +1,8 @@
-package com.pakkirisamy.ex_10_payloadManagement.gson;
-
+package com.pakkirisamy.ex_10_payloadManagement.Not_Learned_jackson;
 import com.google.gson.Gson;
+import com.pakkirisamy.ex_10_payloadManagement.gson.Booking;
+import com.pakkirisamy.ex_10_payloadManagement.gson.BookingResponse;
+import com.pakkirisamy.ex_10_payloadManagement.gson.Bookingdates;
 import io.restassured.RestAssured;
 import io.restassured.config.SSLConfig;
 import io.restassured.http.ContentType;
@@ -12,9 +14,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import static org.assertj.core.api.Assertions.*;
 
-public class Lab_27_RestAssured_GSON {
-    //GSON- is the google library which will convert your class to JSON and JSON to class. This is provided by the google.
-    //JSON - is a plain text in key value pair to transfer from client to server
+public class Lab_27_RestAssured_JackSon_API {
 
     RequestSpecification requestSpecification;
     ValidatableResponse validatableResponse;
@@ -27,7 +27,7 @@ public class Lab_27_RestAssured_GSON {
         booking.setTotalprice(111);
         booking.setDepositpaid(true);
 
-        Bookingdates bookingdates = new Bookingdates();
+        com.pakkirisamy.ex_10_payloadManagement.gson.Bookingdates bookingdates = new Bookingdates();
         bookingdates.setCheckin("2018-01-01");
         bookingdates.setCheckout("2019-01-01");
         booking.setBookingdates(bookingdates);
@@ -82,14 +82,13 @@ public class Lab_27_RestAssured_GSON {
         //Case 3 - DeSerialization - Extraction (This is the one we are going to use in our projects)
 
         String jsonResponseString1 = response.asString();
-        BookingResponse bookingResponse = gson.fromJson(jsonResponseString1,BookingResponse.class);
+        com.pakkirisamy.ex_10_payloadManagement.gson.BookingResponse bookingResponse = gson.fromJson(jsonResponseString1, BookingResponse.class);
         System.out.println(bookingResponse.getBookingid());
         System.out.println(bookingResponse.getBooking().getFirstname());
         System.out.println(bookingResponse.getBooking().getLastname());
 
         assertThat(bookingResponse.getBookingid()).isNotZero().isNotNull();
         assertThat(bookingResponse.getBooking().getFirstname()).isEqualTo("Jim").isNotNull().isNotEmpty();
-
 
     }
 }
